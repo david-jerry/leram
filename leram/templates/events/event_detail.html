@@ -75,8 +75,10 @@
 						<div class="col-12 center">
 							{% if object.closed %}
 							<a href="#" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i>  Reservations Closed </a>
+							{% elif res.user == request.user %}
+							<a href="{% url 'home' %}" class="button button-large button-color d-none d-lg-block "><i class="icon-close"></i>  Already Reserved </a>
 							{% else %}
-							<a href="#" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i>  Make Reservation </a>
+							<a href="{% url 'events:booked' object.id %}" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i>  Make Reservation </a>
 							{% endif %}
 						</div>
 					</div>
@@ -86,8 +88,8 @@
     </div>
     <div class="col-md-4 col-padding">
       <h4 class="text-uppercase text-small">Other Upcoming Events</h4>
-      {% if not object %}
       {% for event in latest_events %}
+      {% if not object %}
       <div class="team">
         <div class="team-image">
           <img src="{{event.image.url}}" alt="{{event.title}}">
@@ -105,16 +107,16 @@
           </div>
         </div>
       </div>
-      {% empty %}
-      <div class="team">
-        No Event Holding
-      </div>
-      {% endfor %}
       {% else %}
       <div class="team">
         No Other Event Holding
       </div>
       {% endif %}
+      {% empty %}
+      <div class="team">
+        No Event Holding
+      </div>
+      {% endfor %}
 
     </div>
   </div>

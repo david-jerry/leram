@@ -105,12 +105,12 @@
 
 <body class="stretched page-transition" data-loader-html="<img class='infinite animated pulse' src='{% static 'images/logos-03.png' %}' width='300'>">
 
+  {% include 'snippets/message-alert.html' %}
 
 	<!-- Document Wrapper
 	============================================= -->
   <div class="clearfix" id="wrapper">
 
-    {% include 'snippets/message-alert.html' %}
 
 <!-- Header
 		============================================= -->
@@ -214,6 +214,9 @@
   {% block inline_javascript %}
   {# Script tags with only code, no src (defer by default) #}
   {% endblock inline_javascript %}
+
+  {% load sweetify %}
+  {% sweetify %}
 </body>
 
 </html>

@@ -139,10 +139,10 @@ class Event(TimeStampedModel):
 class Reservation(TimeStampedModel):
     destination = ForeignKey(Event, on_delete=CASCADE)
     booked = BooleanField(_("Have you booked"), default=False)
-    user = ForeignKey(User, on_delete=CASCADE)
+    user = ForeignKey(User, on_delete=CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.user.name} booked to {self.destination.title}"
+        return f"{self.user.username} booked to {self.destination.title}"
 
 class Request(TimeStampedModel):
     phone_regex = RegexValidator(regex=r"^\+?\d{9,15}$", message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
