@@ -113,15 +113,17 @@ class Event(TimeStampedModel):
         max_length=7,
         help_text="Google online for the longitude of the location to get an accurate readding here. https://map.google.com",
     )
+    closed = BooleanField(_("Event Closed"), default=False)
     featured = BooleanField(_("Featured Event"), default=False)
 
     def __str__(self):
         return self.title.title()
 
     @property
-    def closed(self):
+    def due(self):
         if datetime.date.today() > self.event_date:
-            return True
+            self.closed = True
+            return self.closed
 
 
     def get_absolute_url(self):
