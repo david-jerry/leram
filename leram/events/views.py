@@ -1,10 +1,11 @@
 import sweetify
 
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import CreateView, DetailView
 
 from leram.events.forms import RequestForm
-from leram.events.models import Request, Event
+from leram.events.models import Request, Event, Reservation
+from django.core.exceptions import PermissionDenied
 
 # Create your views here.
 class EventDetailView(DetailView):
@@ -29,3 +30,12 @@ class ServiceRequestView(CreateView):
             timer=4500,
         )
         return super().form_valid(form)
+
+def event_booked(request, reservation_id):
+    if not request.user.is_authenticated:
+        return redirect('account_login')
+
+    event = Reservation.objects.filter(destination__closed=False).get(pk=reservation_id)
+    event.booked = True
+    event.save()
+    return redirect('home')

@@ -113,7 +113,6 @@ class Event(TimeStampedModel):
         max_length=7,
         help_text="Google online for the longitude of the location to get an accurate readding here. https://map.google.com",
     )
-    booked = BooleanField(_("Have you booked"), default=False)
     featured = BooleanField(_("Featured Event"), default=False)
 
     def __str__(self):
@@ -137,6 +136,7 @@ class Event(TimeStampedModel):
 
 class Reservation(TimeStampedModel):
     destination = ForeignKey(Event, on_delete=CASCADE)
+    booked = BooleanField(_("Have you booked"), default=False)
     user = ForeignKey(User, on_delete=CASCADE)
 
     def __str__(self):

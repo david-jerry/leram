@@ -73,7 +73,11 @@
 						<div class="w-100 clear"></div>
 
 						<div class="col-12 center">
-							<a href="#" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i> Make Reservation</a>
+							{% if object.closed %}
+							<a href="#" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i>  Reservations Closed </a>
+							{% else %}
+							<a href="#" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i>  Make Reservation </a>
+							{% endif %}
 						</div>
 					</div>
 
