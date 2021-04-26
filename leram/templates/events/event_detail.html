@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row align-items-stretch pt-5 clearfix">
+    <div class="col-md-8">
+      				<!-- Price Page Section - Parallax
+				============================================= -->
+				<div id="price" class="section page-section parallax pb-0 mb-0 dark" style="background-image: url('{{object.bg_image.url}}'); background-size: cover; height: 600px" data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -300px;"></div>
+
+				<div class="container bottommargin dark clearfix" style="margin-top: -500px">
+					<div class="heading-block bottommargin-lg center clearfix">
+						<h2 style="color: #bb9154;"><i class="icon-car"></i></h2>
+						<h2>{{object.title|upper}}</h2>
+					</div>
+
+					<!-- Price Items
+					============================================= -->
+					<div class="row dark col-padding clearfix" style="background-color: #121212">
+						<div class="col-lg-4 price-wrap">
+							<div class="price-header">
+								<div class="price-name">
+									<a href="#" class="color">Location</a>
+								</div>
+								<div class="price-dots">
+									<span class="separator-dots"></span>
+								</div>
+							</div>
+							<p class="price-desc" style="font-weight: 800;">{{object.location|upper}}</p>
+						</div>
+
+            <div class="col-lg-4 price-wrap">
+							<div class="price-header">
+								<div class="price-name">
+									<a href="#" class="color">Trip Expenses</a>
+								</div>
+								<div class="price-dots">
+									<span class="separator-dots"></span>
+								</div>
+							</div>
+							<p class="price-desc" style="font-weight: 800;">$ {{object.price}}</p>
+						</div>
+
+						<div class="col-lg-4 price-wrap">
+							<div class="price-header">
+								<div class="price-name">
+									<a href="#" class="color">Event Date</a>
+								</div>
+								<div class="price-dots">
+									<span class="separator-dots"></span>
+								</div>
+							</div>
+							<p class="price-desc" style="font-weight: 800;">{{object.event_date}}</p>
+						</div>
+
+						<div class="w-100 clear"></div>
+
+
+						<div class="col-lg-12 price-wrap">
+							<div class="price-header">
+								<div class="price-name">
+									<a href="#" class="color">Information</a>
+								</div>
+								<div class="price-dots">
+									<span class="separator-dots"></span>
+								</div>
+							</div>
+							<p class="price-desc">{{object.content|safe}}</p>
+						</div>
+
+
+
+						<div class="w-100 clear"></div>
+
+						<div class="col-12 center">
+							<a href="#" class="button button-large button-color d-none d-lg-block "><i class="icon-calendar2"></i> Make Reservation</a>
+						</div>
+					</div>
+
+				</div>
+
+    </div>
+    <div class="col-md-4 col-padding">
+      <h4 class="text-uppercase text-small">Other Upcoming Events</h4>
+      {% if not object %}
+      {% for event in latest_events %}
+      <div class="team">
+        <div class="team-image">
+          <img src="{{event.image.url}}" alt="{{event.title}}">
+          <div class="bg-overlay">
+            <div class="bg-overlay-content p-2 flex-column-reverse justify-content-between align-items-center">
+              <div class="d-flex mb-3" data-hover-animate="fadeInUp" data-hover-animate-out="fadeOutDown" data-hover-speed="400" data-hover-parent=".team">
+                  <div style="text-align: center; color:#bb9154">
+                    <span style="font-weight:800;">in {{event.location|upper}}</span><br>
+                    <span><i class="icon-calendar-alt"></i> | {{event.event_date}}</span>
+                  </div>
+              </div>
+              <a href="{{event.get_absolute_url}}" class="button button-large button-color m-0 w-100 text-center" data-hover-animate="fadeInDown" data-hover-animate-out="fadeOutUp" data-hover-speed="400" data-hover-parent=".team">{{event.title|truncatewords:2}}</a>
+            </div>
+            <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="400" data-hover-parent=".team"></div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="team">
+        No Event Holding
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="team">
+        No Other Event Holding
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% include "snippets/testimonials.html" %}
+{% endblock content %}

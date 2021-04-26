@@ -1,0 +1,68 @@
+{% load static %}
+{% url 'home' as home_url %}
+
+<!-- Slider
+		============================================= -->
+<section id="slider" class="slider-element slider-parallax page-section min-vh-60 min-vh-md-100 include-header">
+  <div class="slider-inner"
+    style="background: url('{% static 'images/hero/hero.jpeg' %}') center center no-repeat; background-size: cover;">
+
+    <div class="vertical-middle">
+      <div class="text-center py-5 py-md-0">
+        <img src="{% static 'images/logo.svg' %}" alt="Logo" height="180">
+
+        <!-- Slider Navigation
+						============================================= -->
+        <nav class="custom-hero-nav">
+          <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1300" data-offset="60">
+            <li class="active"><a href="#" data-href="#slider">Home</a></li>
+            <li class="menu-item"><a class="menu-link" href="#" data-offset="56" data-href="#about">About</a></li>
+            <li class="menu-item"><a class="menu-link" href="#" data-offset="56" data-href="#service">Service</a></li>
+            <li class="menu-item"><a class="menu-link" href="{% url 'events:request' %}">Request</a></li>
+            <li class="menu-item"><a class="menu-link" href="#" data-href="#testimonial">Testimonial</a></li>
+            <li class="menu-item"><a class="menu-link" href="#" data-href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="video-wrap">
+      <div class="video-overlay" style="background: rgba(0,0,0,0.6);"></div>
+    </div>
+
+    <!-- Slider Appointment Button
+				============================================= -->
+      {% if not request.user.is_authenticated %}
+      <a href="{% url 'account_signup' %}" class="button button-large button-color button-appointment d-none d-lg-block" data-easing="easeInOutExpo" data-speed="1300"
+      ><i class="icon-user2"></i> Become a Member</a>
+      {% else %}
+      <a class="button button-large button-color button-appointment d-none d-lg-block" href="{% url 'users:detail' request.user.username %}" data-easing="easeInOutExpo" data-speed="1300"
+      ><i class="icon-user2"></i> View Membership</a>
+      {% endif %}
+
+
+    <!-- Slider Social Icons
+				============================================= -->
+    <div class="slider-social d-none d-lg-block clearfix">
+      <a href="https://facebook.com/semicolonweb" target="_blank"
+        class="social-icon si-small si-borderless si-facebook">
+        <i class="icon-facebook"></i>
+        <i class="icon-facebook"></i>
+      </a>
+      <a href="https://twitter.com/__semicolon" target="_blank" class="social-icon si-small si-borderless si-twitter">
+        <i class="icon-twitter"></i>
+        <i class="icon-twitter"></i>
+      </a>
+      <a href="https://instagram.com/semicolonweb" target="_blank"
+        class="social-icon si-small si-borderless si-instagram">
+        <i class="icon-instagram"></i>
+        <i class="icon-instagram"></i>
+      </a>
+      <a href="https://youtube.com/semicolonweb" target="_blank" class="social-icon si-small si-borderless si-youtube">
+        <i class="icon-youtube"></i>
+        <i class="icon-youtube"></i>
+      </a>
+    </div>
+
+  </div>
+</section>

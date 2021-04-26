@@ -1,0 +1,97 @@
+{% load static %}
+
+<!-- Contact Page Section
+				============================================= -->
+<div id="contact" class="row page-section pt-0 clearfix" style="max-width:100vw; padding-right:0!important;">
+
+  <div class="col-md-6 px-0">
+    <div class="gmap h-100" data-address="Ibiza, Spain" data-zoom="5"
+      data-markers='[{ address: "Ibiza, Spain", icon:{ image: "demos/barber/images/map-marker.png", iconsize: [32, 39], iconanchor: [16,36] } }]'
+      data-styles='[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]'>
+    </div>
+  </div>
+
+  <div class="col-md-6 mx-0" style="background-color: #F9F9F9; margin-right:0!important;">
+    <div class="col-padding mx-0">
+      <h3 class="text-uppercase">Our Headquarters</h3>
+      <div class="row topmargin-sm bottommargin-sm clearfix" style="font-size: 16px; line-height: 1.7;">
+        <div class="col-lg-6 bottommargin-sm">
+          <address style="line-height: 1.7;" class="mb-0">
+            <strong>Atlanta:</strong><br>
+            3340 Peachtree Road NE Ste 1010<br>
+            Atlanta, GA 30326<br>
+          </address>
+          <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 470 2421783
+        </div>
+        <div class="col-lg-6">
+          <address style="line-height: 1.7;" class="mb-0">
+            <strong>Los Angeles:</strong><br>
+            750 N San Vicente Blvd Ste 800 W.<br>
+            West Hollywood, CA 90069<br>
+          </address>
+          <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 310 4969395
+        </div>
+      </div>
+
+      <div class="form-widget">
+
+        <div class="form-result"></div>
+
+        <form class="mb-0" id="template-contactform" name="template-contactform" action="include/form.php"
+          method="post">
+
+          <div class="form-process">
+            <div class="css3-spinner">
+              <div class="css3-spinner-scaler"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" id="template-contactform-name" name="template-contactform-name" value=""
+                class="sm-form-control border-form-control required" placeholder="Name" />
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="email" id="template-contactform-email" name="template-contactform-email" value=""
+                class="required email sm-form-control border-form-control" placeholder="Email Address" />
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col-md-4 form-group">
+              <input type="text" id="template-contactform-phone" name="template-contactform-phone" value=""
+                class="sm-form-control border-form-control" placeholder="Phone" />
+            </div>
+
+            <div class="col-md-8 form-group">
+              <input type="text" id="template-contactform-subject" name="subject" value=""
+                class="required sm-form-control border-form-control" placeholder="Subject" />
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col-12 form-group">
+              <textarea class="required sm-form-control border-form-control" id="template-contactform-message"
+                name="template-contactform-message" rows="7" cols="30" placeholder="Your Message"></textarea>
+            </div>
+
+            <div class="col-12 form-group">
+              <button class="button button-large btn-block button-color ml-0 topmargin-sm" type="submit"
+                id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+            </div>
+
+            <div class="col-12 form-group d-none">
+              <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value=""
+                class="sm-form-control" />
+            </div>
+          </div>
+
+          <input type="hidden" name="prefix" value="template-contactform-">
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>

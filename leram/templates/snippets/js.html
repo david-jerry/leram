@@ -1,0 +1,16 @@
+{% load static compress %}
+
+{% compress js inline %}
+<!-- JavaScripts
+============================================= -->
+<script defer src="{% static 'js/jquery.js' %}"></script>
+<script defer src="{% static 'js/plugins.min.js' %}"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script defer src="{% static 'js/functions.js' %}"></script>
+<!-- Your stuff: Third-party javascript libraries go here -->
+
+<!-- place project specific Javascript in this file -->
+<script defer src="{% static 'js/project.js' %}"></script>
+{% endcompress %}

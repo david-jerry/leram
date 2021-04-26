@@ -1,0 +1,214 @@
+{% load static %}
+
+<!-- About Section
+============================================= -->
+<div id="about" class="section m-0 bg-transparent page-section" style="padding: 150px 0">
+  <div class="container clearfix">
+    <div class="row clearfix">
+      <!-- <div class="col-md-3 col-6 d-none d-md-block">
+        <img src="demos/barber/images/about/1.jpg" alt="Image">
+      </div> -->
+      <div class="col-md-12 col-12 center" style="padding: 0 50px;">
+        <div class="heading-block bottommargin-sm">
+          <h2>About Us</h2>
+        </div>
+        <p>
+        Your lifestyle is marked by elevated taste and authenticity.
+        With the world as your sandbox, only you possess the vision of your ideal immersive experience.
+        All that stands between you and the indulgent adventure you crave is the dedicated team to make it happen.
+        </p>
+        <p>
+        La Rambouillet is your premier luxury concierge, designed to help you savor the escape you envision.
+        We are committed to delivering the transformative experience that suits your distinctive sense of wonder.
+        Our exclusive network of high-end partnership is trusted by the world's most discerning travelers to transport you into a realm of superior elegance.
+        </p>
+        <!-- <img src="demos/barber/images/about/sign.png" alt="Image" width="200"> -->
+      </div>
+      <!-- <div class="col-md-3 col-6 d-none d-md-block">
+        <img src="demos/barber/images/about/2.jpg" alt="Image">
+      </div> -->
+    </div>
+  </div>
+</div>
+
+				<!-- Service Page Section
+				============================================= -->
+				<div id="service" class="section page-section bg-transparent p-0 mt-0 clearfix">
+
+					<div class="row align-items-stretch clearfix bottommargin">
+
+						<!-- Service Image
+						============================================= -->
+						<div class="col-lg-6 center col-padding parallax" style="background-image: url('{% static 'images/about/luxury-home.jpeg' %}');" data-bottom-top="background-position:0px 100px;" data-top-bottom="background-position:0px -300px;">
+							<div class="vertical-middle dark">
+								<div class="heading-block border-0 center">
+									<h2 class="nott ls0" style="font-size: 54px">How We Do It.</h2>
+								</div>
+							</div>
+						</div>
+
+						<!-- Service Featured Boxes
+						============================================= -->
+						<div class="col-lg-6 col-padding" style="background-color: #F9F9F9">
+							<div>
+								<div class="row clearfix" style="padding: 20px 0">
+									<div class="col-lg-10 col-md-8 bottommargin">
+										<div class="feature-box fbox-plain">
+											<div class="fbox-content">
+												<h2>Delivering The best experiences, anywhere in the world</h2>
+												<p>
+                        We understand what it means to indulge in an adventure that is both immersive and memorable which is why our getaways are hand-crafted to turn your dreams into reality.
+                        </p>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-10 col-md-8 bottommargin">
+										<div class="feature-box fbox-plain">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-car"></i></a>
+											</div>
+											<div class="fbox-content">
+												<h3>Your Personal Cheuffer</h3>
+												<p>Fall into deep relaxation between destinations.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-10 col-md-8 bottommargin">
+										<div class="feature-box fbox-plain">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-atlas"></i></a>
+											</div>
+											<div class="fbox-content">
+												<h3>On Demand Air/Water travel</h3>
+												<p>Tour the world in comfort in a whim</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-10 col-md-8 bottommargin">
+										<div class="feature-box fbox-plain">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-ticket"></i></a>
+											</div>
+											<div class="fbox-content">
+												<h3>VIP Access</h3>
+												<p>
+													Gain exclusive invites to parties and events reserved for elite guests.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-10 col-md-8">
+										<div class="feature-box fbox-plain">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-diamond2"></i></a>
+											</div>
+											<div class="fbox-content">
+												<h3>Red Carpet Ready</h3>
+												<p>
+													Attend private galas and screening amongst influential celebrities and moguls.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="container topmargin-lg clearfix">
+
+						<div class="row">
+							<!-- Barber Category 1
+							============================================= -->
+							<div class="col-md-4 center bottommargin-lg">
+								<div class="feature-box media-box">
+									<div class="fbox-media" style="padding: 0 40px;">
+										<a href="#"><img class="rounded-circle img-thumbnail" src="{% static 'images/services/bently.webp' %}" alt="Travel With Grace Photo"><span>Travel</span><div class="sale-flash badge badge-warning py-2 px-3 rounded-0">-30% OFF*</div></a>
+									</div>
+									<div class="fbox-content">
+										<h3><span class="ls0 subtitle font-primary">Travel With Grace.</span></h3>
+										<p>Traverse the globe without limits. We'll take on the hassle of planning lavish flight, sea and ground accommodations that spare no comfort.</p>
+										<a href="{% url 'events:request' %}" class="more-link text-uppercase ls1 font-weight-bold" style="margin: 20px 0 0 0; font-style: normal;">Book</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Barber Category 2
+							============================================= -->
+							<div class="col-md-4 center bottommargin-lg">
+								<div class="feature-box media-box">
+									<div class="fbox-media" style="padding: 0 40px;">
+										<a href="#"><img class="rounded-circle img-thumbnail" src="{% static 'images/services/dining.webp' %}" alt="Opulent Dining Photo"><span>Dining</span></a>
+									</div>
+									<div class="fbox-content">
+										<h3><span class="ls0 subtitle font-primary">Bite into Opulence.</span></h3>
+										<p>Experience a variety of global tastes and texture from three-star Michelin restaurants to private rooftop wine tastings. We craft your culinary journey with the precision of local expertise.</p>
+										<a href="{% url 'events:request' %}" class="more-link text-uppercase ls1 font-weight-bold" style="margin: 20px 0 0 0; font-style: normal;">Book</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Barber Category 3
+							============================================= -->
+							<div class="col-md-4 center bottommargin-lg">
+								<div class="feature-box media-box">
+									<div class="fbox-media" style="padding: 0 40px;">
+										<a href="#"><img class="rounded-circle img-thumbnail" src="{% static 'images/services/real-estate.webp' %}" alt="Real Estate Photo"><span>Estate</span></a>
+									</div>
+									<div class="fbox-content">
+										<h3><span class="ls0 subtitle font-primary">Real Estate.</span></h3>
+										<p>Global property masters with access to off-showcase properties and master promotion abilities. Regardless of whatever the longing is to purchase, sell or lease a five star living arrangement, our specialist will locate the ideal property to suit each way of life and speculation objective.</p>
+										<a href="{% url 'events:request' %}" class="more-link text-uppercase ls1 font-weight-bold" style="margin: 20px 0 0 0; font-style: normal;">Book</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Barber Category 4
+							============================================= -->
+							<div class="col-md-4 center bottommargin-lg">
+								<div class="feature-box media-box">
+									<div class="fbox-media" style="padding: 0 40px;">
+										<a href="#"><img class="rounded-circle img-thumbnail" src="{% static 'images/services/commomerate.webp' %}" alt="Commemorate Photo"><span>Commemorate Journey</span></a>
+									</div>
+									<div class="fbox-content">
+										<h3><span class="ls0 subtitle font-primary">Commemorate Your Journey.</span></h3>
+										<p>Embark on a personalized  outing to find meaningful gifts and mementos. Your dedicated concierge team will map out the shopping expedition tailored to your taste.</p>
+										<a href="{% url 'events:request' %}" class="more-link text-uppercase ls1 font-weight-bold" style="margin: 20px 0 0 0; font-style: normal;">Book</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Barber Category 5
+							============================================= -->
+							<div class="col-md-4 center bottommargin-lg">
+								<div class="feature-box media-box">
+									<div class="fbox-media" style="padding: 0 40px;">
+										<a href="#"><img class="rounded-circle img-thumbnail" src="{% static 'images/services/winery.webp' %}" alt="Winery Photo"><span>Winery</span></a>
+									</div>
+									<div class="fbox-content">
+										<h3><span class="ls0 subtitle font-primary">Prestigious Wine- Tasting.</span></h3>
+										<p>Our bespoke schedules are arranged around you and your inclinations to make a private interesting visit for your gathering. We can organize wine visits to goals you wish to visit, when you wish to visit. Different exercises can be incorporated, for example, cookery classes, truffle chases, golf, culture, stream cruising, gallery visits or olive oil tasting.</p>
+										<a href="{% url 'events:request' %}" class="more-link text-uppercase ls1 font-weight-bold" style="margin: 20px 0 0 0; font-style: normal;">Book</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Barber Category 6
+							============================================= -->
+							<div class="col-md-4 center bottommargin-lg">
+								<div class="feature-box media-box">
+									<div class="fbox-media" style="padding: 0 40px;">
+										<a href="#"><img class="rounded-circle img-thumbnail" src="{% static 'images/services/event.webp' %}" alt="Event Photo"><span>Events</span></a>
+									</div>
+									<div class="fbox-content">
+										<h3><span class="ls0 subtitle font-primary">Private & Exclusive Events.</span></h3>
+										<p>We produce amazing gatherings and festivities for the world's most perceiving crowd. Prestigious for making unique encounters in energizing looked for after areas everywhere throughout the world, from close get-togethers to luxurious festivals. We have gained notoriety for generation greatness, exactness consideration and making recollections.</p>
+										<a href="{% url 'events:request' %}" class="more-link text-uppercase ls1 font-weight-bold" style="margin: 20px 0 0 0; font-style: normal;">Book</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>

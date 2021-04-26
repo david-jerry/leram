@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block add_sticky %}
+data-sticky-class="dark"
+data-sticky-offset="full" 
+data-sticky-offset-negative="60" 
+data-responsive-class="dark"
+data-sticky-shrink="false"
+{% endblock add_sticky %}
+
+
+{% block slider %}
+{% include 'snippets/slider.html' %}
+{%endblock slider %}
+
+{% block content %}
+{% include "snippets/about.html" %}
+{% include "snippets/testimonials.html" %}
+{% include "snippets/contact.html" %}
+{% endblock content %}
