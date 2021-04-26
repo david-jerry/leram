@@ -36,6 +36,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django_resized import ResizedImageField
 from ckeditor.fields import RichTextField
 from phonenumber_field.modelfields import  PhoneNumberField
+import datetime
 
 # Create your models here.
 User = settings.AUTH_USER_MODEL
@@ -112,12 +113,17 @@ class Event(TimeStampedModel):
         max_length=7,
         help_text="Google online for the longitude of the location to get an accurate readding here. https://map.google.com",
     )
-    registration = BooleanField(_("Application Closed"), default=False)
     booked = BooleanField(_("Have you booked"), default=False)
     featured = BooleanField(_("Featured Event"), default=False)
 
     def __str__(self):
         return self.title.title()
+
+    @property
+    def closed(self):
+        if datetime.date.today() > self.event_date:
+            return True
+
 
     def get_absolute_url(self):
         """Get url for event's detail view.

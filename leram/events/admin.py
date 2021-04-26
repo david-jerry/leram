@@ -26,13 +26,12 @@ class EventAdmin(admin.ModelAdmin):
             _("Permissions"),
             {
                 "fields": (
-                    "registration",
                     "featured",
                 )
             },
         ),
     )
-    list_display = ["title", "event_date", "price", "registration"]
+    list_display = ["title", "event_date", "price", "closed"]
     search_fields = ["title", "price"]
 
 
