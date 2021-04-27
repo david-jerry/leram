@@ -29,14 +29,10 @@
   <meta property="fb:app_id" content="">
   <meta name="twitter:site" content="@lerambouillet">
 
+  <title>{% block title %}{% endblock title %}</title>
 
   <!-- Third party imports -->
-  <link rel="preconnect" href="https://maxst.icons8.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
-  <link rel="stylesheet"
-    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
   <link
     href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans:400,700|PT+Serif:400,400i&display=swap"
     rel="stylesheet" type="text/css" />
@@ -56,9 +52,6 @@
 
   {% block css %}
   <!-- Latest compiled and minified Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   {% include 'snippets/css.html' %}
 
   <style>
@@ -97,7 +90,17 @@
 
   {% endblock %}
 
-  {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+  <!-- Bootstrap JS and its dependencies-->
+  <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script defer src="https://maps.google.com/maps/api/js?key=AIzaSyCVXIb8GN_xJn84mEK7XuiIXIAbRnep8fc"></script>
   {{ form.media }}
 
 
@@ -195,17 +198,6 @@
     ================================================== -->
   {# Placed at the top of the document so pages load faster with defer #}
   {% block javascript %}
-  <!-- Bootstrap JS and its dependencies-->
-  <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script defer src="https://maps.google.com/maps/api/js?key=AIzaSyCVXIb8GN_xJn84mEK7XuiIXIAbRnep8fc"></script>
 
   {% include 'snippets/js.html' %}
 
