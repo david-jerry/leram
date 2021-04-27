@@ -9,49 +9,52 @@
   <div class="row align-items-stretch pt-5 clearfix">
     <div class="col-md-8 col-padding">
 
-<h1 class="text-uppercase">{% trans "Sign Out" %}</h1>
+      <h1 class="text-uppercase">{% trans "Sign Out" %}</h1>
 
-<div  class="form-widget">
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button class="button button-large button-color bottommargin-sm m-0 w-100 text-center" type="submit">{% trans 'Sign Out' %}</button>
-</form>
-</div>
-</div>
+      <div class="form-widget">
+        <p>{% trans 'Are you sure you want to sign out?' %}</p>
+        <form method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="button button-large button-color bottommargin-sm m-0 w-100 text-center" type="submit">{% trans
+            'Sign Out' %}</button>
+        </form>
+      </div>
+    </div>
 
-</div>
-    <div class="col-md-4 col-padding">
-      <h3 class="text-uppercase">Upcoming Events</h3>
-      {% for event in latest_events %}
-      <div class="team">
-        <div class="team-image">
-          <img src="{{event.image.url}}" alt="{{event.title}}">
-          <div class="bg-overlay">
-            <div class="bg-overlay-content p-2 flex-column-reverse justify-content-between align-items-center">
-              <div class="d-flex mb-3" data-hover-animate="fadeInUp" data-hover-animate-out="fadeOutDown" data-hover-speed="400" data-hover-parent=".team">
-                  <div style="text-align: center; color:#bb9154">
-                    <span style="font-weight:800;">in {{event.location|upper}}</span><br>
-                    <span><i class="icon-calendar-alt"></i> | {{event.event_date}}</span>
-                  </div>
+  </div>
+  <div class="col-md-4 col-padding">
+    <h3 class="text-uppercase">Upcoming Events</h3>
+    {% for event in latest_events %}
+    <div class="team">
+      <div class="team-image">
+        <img src="{{event.image.url}}" alt="{{event.title}}">
+        <div class="bg-overlay">
+          <div class="bg-overlay-content p-2 flex-column-reverse justify-content-between align-items-center">
+            <div class="d-flex mb-3" data-hover-animate="fadeInUp" data-hover-animate-out="fadeOutDown"
+              data-hover-speed="400" data-hover-parent=".team">
+              <div style="text-align: center; color:#bb9154">
+                <span style="font-weight:800;">in {{event.location|upper}}</span><br>
+                <span><i class="icon-calendar-alt"></i> | {{event.event_date}}</span>
               </div>
-              <a href="{{event.get_absolute_url}}" class="button button-large button-color m-0 w-100 text-center" data-hover-animate="fadeInDown" data-hover-animate-out="fadeOutUp" data-hover-speed="400" data-hover-parent=".team">{{event.title|truncatewords:2}}</a>
             </div>
-            <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="400" data-hover-parent=".team"></div>
+            <a href="{{event.get_absolute_url}}" class="button button-large button-color m-0 w-100 text-center"
+              data-hover-animate="fadeInDown" data-hover-animate-out="fadeOutUp" data-hover-speed="400"
+              data-hover-parent=".team">{{event.title|truncatewords:2}}</a>
+          </div>
+          <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="400" data-hover-parent=".team">
           </div>
         </div>
       </div>
-      {% empty %}
-      <div class="team">
-        No Event Holding
-      </div>
-      {% endfor %}
     </div>
+    {% empty %}
+    <div class="team">
+      No Event Holding
+    </div>
+    {% endfor %}
   </div>
 </div>
-{% include "snippets/testimonials.html" %}
-
+</div>
 {% endblock %}

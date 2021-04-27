@@ -10,21 +10,22 @@
   <div class="row align-items-stretch pt-5 clearfix">
     <div class="col-md-8 col-padding">
 
-<h1 class="text-uppercase">{% trans "Sign Up" %}</h1>
+      <h1 class="text-uppercase">{% trans "Sign Up" %}</h1>
 
-<div  class="form-widget">
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+      <div class="form-widget">
+        <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans          %}</p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="button button-large button-color bottommargin-sm m-0 w-100 text-center" type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-</div>
-</div>
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+          {{ form|crispy }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="button button-large button-color bottommargin-sm m-0 w-100 text-center" type="submit">{% trans
+            "Sign Up" %} &raquo;</button>
+        </form>
+      </div>
+    </div>
     <div class="col-md-4 col-padding">
       <h3 class="text-uppercase">Upcoming Events</h3>
       {% for event in latest_events %}
@@ -33,15 +34,19 @@
           <img src="{{event.image.url}}" alt="{{event.title}}">
           <div class="bg-overlay">
             <div class="bg-overlay-content p-2 flex-column-reverse justify-content-between align-items-center">
-              <div class="d-flex mb-3" data-hover-animate="fadeInUp" data-hover-animate-out="fadeOutDown" data-hover-speed="400" data-hover-parent=".team">
-                  <div style="text-align: center; color:#bb9154">
-                    <span style="font-weight:800;">in {{event.location|upper}}</span><br>
-                    <span><i class="icon-calendar-alt"></i> | {{event.event_date}}</span>
-                  </div>
+              <div class="d-flex mb-3" data-hover-animate="fadeInUp" data-hover-animate-out="fadeOutDown"
+                data-hover-speed="400" data-hover-parent=".team">
+                <div style="text-align: center; color:#bb9154">
+                  <span style="font-weight:800;">in {{event.location|upper}}</span><br>
+                  <span><i class="icon-calendar-alt"></i> | {{event.event_date}}</span>
+                </div>
               </div>
-              <a href="{{event.get_absolute_url}}" class="button button-large button-color m-0 w-100 text-center" data-hover-animate="fadeInDown" data-hover-animate-out="fadeOutUp" data-hover-speed="400" data-hover-parent=".team">{{event.title|truncatewords:2}}</a>
+              <a href="{{event.get_absolute_url}}" class="button button-large button-color m-0 w-100 text-center"
+                data-hover-animate="fadeInDown" data-hover-animate-out="fadeOutUp" data-hover-speed="400"
+                data-hover-parent=".team">{{event.title|truncatewords:2}}</a>
             </div>
-            <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="400" data-hover-parent=".team"></div>
+            <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="400"
+              data-hover-parent=".team"></div>
           </div>
         </div>
       </div>
@@ -53,6 +58,4 @@
     </div>
   </div>
 </div>
-{% include "snippets/testimonials.html" %}
-
 {% endblock %}

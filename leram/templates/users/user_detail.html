@@ -5,8 +5,9 @@
 
 {% block content %}
 <div class="container">
+  <div class="col-padding">
 
-  <div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
       <h2>{{ object.username }}</h2>
@@ -30,5 +31,9 @@
 <!-- End Action buttons -->
 {% endif %}
 
+  </div>
+
+
 </div>
+{% include "snippets/testimonials.html" %}
 {% endblock content %}
