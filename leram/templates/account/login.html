@@ -1,12 +1,10 @@
-{% extends "account/base.html" %} {% load i18n %} {% load account socialaccount
-%} {% load crispy_forms_tags %} {% block head_title %}{% trans "Sign In" %}{%
-endblock %} {% block inner %}
+{% extends "account/base.html" %} {% load i18n %} {% load account socialaccount %} {% load crispy_forms_tags %} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block inner %}
 <div class="container">
   <div class="row align-items-stretch pt-5 clearfix">
     <div class="col-md-8 col-padding">
       <h1 class="text-uppercase">{% trans "Sign In" %}</h1>
-        {% get_providers as socialaccount_providers %} {% if
-        socialaccount_providers %}
+        {% get_providers as socialaccount_providers %} 
+        {% if socialaccount_providers %}
         <p>
           {% blocktrans with site.name as site_name %} Please sign in with one
           of your existing third party accounts. Or,
