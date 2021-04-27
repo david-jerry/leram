@@ -12,7 +12,6 @@
 
       <h1 class="text-uppercase">{% trans "Sign Up" %}</h1>
 
-      <div class="form-widget">
         <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans          %}</p>
 
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -21,10 +20,8 @@
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="button button-large button-color bottommargin-sm m-0 w-100 text-center" type="submit">{% trans
-            "Sign Up" %} &raquo;</button>
+          <button class="button button-large button-color bottommargin-sm m-0 w-100 text-center" type="submit">{% trans "Sign Up" %} &raquo;</button>
         </form>
-      </div>
     </div>
     <div class="col-md-4 col-padding">
       <h3 class="text-uppercase">Upcoming Events</h3>
